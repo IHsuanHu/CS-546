@@ -63,23 +63,23 @@ Your article elements will contain:
 ## journal.html
 In journal.html, you will write a document that is your travel journal. In this document you will:
 
-- Include an h1 with the value: "My Travel Journal"  You should also include the same value in your title tag.
-- Create a main element with many section tags inside of it. Each section will contain a journal entry. Each section element should have the following:
+- Include an ```h1``` with the value: "My Travel Journal"  You should also include the same value in your title tag.
+- Create a ```main``` element with many ```section``` tags inside of it. Each section will contain a journal entry. Each section element should have the following:
 
-1. An h2 that has the title of the journal entry
-2. An cite element that has the date/time of the journal entry.
-3. Your journal entry should be at least one p element but can include more than one.
-4. Inside an aside tag that has the name of the destination that journal entry belongs to
+1. An ```h2``` that has the title of the journal entry
+2. An ```cite``` element that has the date/time of the journal entry.
+3. Your journal entry should be at least one ```p``` element but can include more than one.
+4. Inside an ```aside``` tag that has the name of the destination that journal entry belongs to
 
 ## tips.html
 In tips.html, you will write a document giving travel tips.
 
-- Include an h1 tag with the text: "Travel Tips and Tricks" You should also include a similar description in your title tag.
-- Create a main element, inside the main element you will have an ordered list olof travel tips, that will have several list item elements from the most to least important.
-- for each list item li element you will nest inside it an h3 element with the title of the tip and one or two paragraphs p describing the tip in detail. Again, this h3 and p elements should be nested inside the li element. 
+- Include an ```h1``` tag with the text: "Travel Tips and Tricks" You should also include a similar description in your ```title``` tag.
+- Create a ```main``` element, inside the main element you will have an ordered list ```ol```of travel tips, that will have several list item elements from the most to least important.
+- for each list item ```li``` element you will nest inside it an ```h3``` element with the title of the tip and one or two paragraphs ```p``` describing the tip in detail. Again, this ```h3``` and p elements should be nested inside the ```li``` element. 
 
 # General Requirements
 1. [Your HTML must be valid](https://validator.w3.org/#validate_by_input) or you will lose points on the assignment.
-2. Your HTML must make semantical sense; usage of tags for the purpose of simply changing the style of elements (such as i, b, font, center, etc) will result in points being deducted; think in terms of content first; style is done in CSS, not your HTML!
+2. Your HTML must make semantical sense; usage of tags for the purpose of simply changing the style of elements (such as ```i, b, font, center```, etc) will result in points being deducted; think in terms of content first; style is done in CSS, not your HTML!
 3. You can be as creative as you'd like to fulfill front-end requirements; if an implementation is not explicitly stated, however you go about it is fine (provided the HTML is valid and semantical). Design is not a factor in this course.
 4. You will zip up all three files and submit then zip. Name the zip LastName_FirstName_Section.zip
