@@ -18,7 +18,7 @@ The entire checking operation will be done using client-side JavaScript.
 # The Server
 Your server this week should not check for palindromes! Your server only exists to allow someone to get to the HTML Page and download the associated assets to run the palindrome checking page.
 
-```/``` # The Whole Palindrome Checker Application
+# The Whole Palindrome Checker Application ```/``` 
 Your page should have a few basic user interface elements:
 
 - A header tag, with an h1 naming your site, with a title for your page
