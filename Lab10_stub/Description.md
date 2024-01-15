@@ -208,7 +208,7 @@ In this file, you must perform all client-side validation for every single form 
 This middleware package does one (fairly simple) thing. It creates a cookie for the browser that will be used to track the current session of the user, after we verify their login. We will expand on the req.session field to store information about the currently logged in user. You can see an example using req.session [here](https://github.com/expressjs/session#reqsession).
 
 To initialize the middleware, you must do the following:
-
+```javascript
 // Your app.js file
 
 const session = require('express-session')
@@ -221,14 +221,14 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
+```
+You can read more about session's different configuration options [here](https://github.com/expressjs/session#options). For the sake of this lab, the above configuration is all you will need.
 
-You can read more about session's different configuration options here to an external site.. For the sake of this lab, the above configuration is all you will need.
 
-
-Requirements
+# Requirements
 1. All previous lab requirements still apply.
 2. You must remember to update your package.json file to set app.js as your starting script!
-3. Your HTML must be valid to an external site. or you will lose points on the assignment.
+3. [Your HTML must be valid](https://validator.w3.org/#validate_by_input) to an external site. or you will lose points on the assignment.
 4. Your HTML must make semantical sense; usage of tags for the purpose of simply changing the style of elements (such as i, b, font, center, etc) will result in points being deducted; think in terms of content first, then style with your CSS.
 5. You can be as creative as you'd like to fulfill front-end requirements; if an implementation is not explicitly stated, however you go about it is fine (provided the HTML is valid and semantical). Design is not a factor in this course.
 6. All inputs must be properly labeled!
