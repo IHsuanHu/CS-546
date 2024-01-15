@@ -49,7 +49,7 @@ You must style the ```prime``` class to make text have a ```color``` of ```#00ff
 An example of what the list would like on the page is: 
 
 1. [false, false, true]
-2. ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)`[true, true, true, true]`
+2. [true, true, true, true](https://placehold.co/15x15/f03c15/f03c15.png)[true, true, true, true]
 3. [false, false, true, true, true]
 4. [false, false, false, true, true, true, false]
 5. [true, true, true, true, true, false]
