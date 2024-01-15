@@ -6,12 +6,13 @@ You will not need to use a database for this lab.
 You must use the ```async/await``` keywords (not Promises). You will also be using ```axios``` (Links to an external site.), which is a HTTP client for Node.js; you can install it with ```npm i axios```. 
 
 Marvel API
-You will be using the ![Marvel API](https://developer.marvel.com/) to an external site..  You will need to register and sign up for an API key.  You will not be able to make requests to the API without signing up and getting an API keyLinks to an external site.. Please look at the data returned so you know the schema of the data and the objects it returns (the links to Characters above work but using my API key.  PLEASE MAKE SURE YOU READ THE DOCUMENTATION FOR THE API! IT IS SUPER IMPORTANT THAT YOU UNDERSTAND HOW AN API WORKS AND THE FORMAT OF THE DATA  SO YOU CAN USE IT EFFECTIVELY!
+You will be using the [Marvel API](https://developer.marvel.com/).  You will need to register and sign up for an API key.  You will not be able to make requests to the API without signing up and getting an [API key](https://developer.marvel.com/account). Please look at the data returned so you know the schema of the data and the objects it returns (the links to Characters above work but using my API key.  PLEASE MAKE SURE YOU READ THE DOCUMENTATION FOR THE API! IT IS SUPER IMPORTANT THAT YOU UNDERSTAND HOW AN API WORKS AND THE FORMAT OF THE DATA  SO YOU CAN USE IT EFFECTIVELY!
 
 You can use the following code to construct the URL. You can read more about AUTHORIZING AND SIGNING REQUESTS from the link below
 
-https://developer.marvel.com/documentation/authorizationLinks to an external site. 
+[https://developer.marvel.com/documentation/authorization](https://developer.marvel.com/documentation/authorization)
 
+```Javascript
 import md5 from 'blueimp-md5' //you will need to install this module;
 const publickey = 'your_public_key(API KEY) from Marvel dev portal';
 const privatekey = 'your private key from Marvel dev portal';
@@ -20,39 +21,42 @@ const stringToHash = ts + privatekey + publickey;
 const hash = md5(stringToHash);
 const baseUrl = 'https://gateway.marvel.com:443/v1/public/characters';
 const url = baseUrl + '?ts=' + ts + '&apikey=' + publickey + '&hash=' + hash;
-You will be using two endpoints of the Marvel API which is an API about Marvel  for your Axios calls.  The search character endpoint where you pass the search term as a query string parameter: https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=SEARCH_TERM_HERE  and then you'll get an individual character using the endpoint
+```
 
-https://gateway.marvel.com:443/v1/public/characters/:id
-:id where :id is the ID of the character you are looking up.
+You will be using two endpoints of the Marvel API which is an API about Marvel  for your Axios calls.  The search character endpoint where you pass the search term as a query string parameter: ```https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=SEARCH_TERM_HERE```  and then you'll get an individual character using the endpoint
+
+```https://gateway.marvel.com:443/v1/public/characters/:id```
+```:id``` where ```:id``` is the ID of the character you are looking up.
 
 You will use these two endpoints to make your axios.get calls depending on which route is called. 
 
 You will be making three routes/pages in your application:
 
-http://localhost:3000/ the main page of this application will provide a search form to start a search of characters for a keyword. 
-http://localhost:3000/searchmarvelcharacters this page will make the axios call to the search endpoint and return up to 15 matching results that contain the provided request form param, searchCharacterByName
-http://localhost:3000/marvelcharacter/{id} this page will show all the details of the character with the id matching the provided URL param, id
+- ```http://localhost:3000/``` the main page of this application will provide a search form to start a search of characters for a keyword. 
+- ```http://localhost:3000/searchmarvelcharacters``` this page will make the axios call to the search endpoint and return up to 15 matching results that contain the provided request form param, ```searchCharacterByName```
+- ```http://localhost:3000/marvelcharacter/{id}``` this page will show all the details of the character with the id matching the provided URL param, ```id```
 All other URLS should return a 404
 
 ## `GET http://localhost:3000/`
-This page will respond with a valid HTML document. The title of the document should be "Marvel Character Finder". You should have the title set as the <title> element of the HTML document and as an h1 in your document.
+This page will respond with a valid HTML document. The title of the document should be "Marvel Character Finder". You should have the title set as the ```<title>``` element of the HTML document and as an ```h1``` in your document.
 
-Your page should reference a CSS file, /public/site.css; this file should have at least 10 rulesets you must use at least 5 of them on this page. 
+Your page should reference a CSS file, ```/public/site.css```; this file should have at least 10 rulesets you must use at least 5 of them on this page. 
 
-You should have a main element, and inside of the main element have a p element with a brief (2-3 sentence description) of what your website does.
+You should have a ```main``` element, and inside of the ```main``` element have a ```p``` element with a brief (2-3 sentence description) of what your website does.
 
-Also inside the main element, you will have a form; this form will POST to /searchmarvelcharacters. This form will have an input and a label; You will give the input a name AND id of "searchCharacterByName".  The label should properly reference the same id as the input. You should also have a input with a type of submit that submits the form. 
+Also inside the ```main``` element, you will have a ```form```; this ```form``` will ```POST``` to ```/searchmarvelcharacters```. This ```form``` will have an ```input``` and a ```label```; You will give the input a name AND id of ```searchCharacterByName```.  The ```label``` should properly reference the same ```id``` as the ```input```. You should also have a ```input``` with a type of ```submit``` that submits the form. 
 
 
-POST http://localhost:3000/searchmarvelcharacters  
-This route will read the searchCharacterByName parameter and then make an axios call to the Marvel API endpoint searching for that keyword. For example, if the user typed spider in the input field, you would make the axios call to: https://gateway.marvel.com/v1/public/characters?nameStartsWith=spider&ts=TIME_STAMP_HERE&apikey=API_KEY_HERE&hash=HASH_HERE
+## POST http://localhost:3000/searchmarvelcharacters  
+This route will read the ```searchCharacterByName``` parameter and then make an axios call to the Marvel API endpoint searching for that keyword. For example, if the user typed spider in the input field, you would make the axios call to: https://gateway.marvel.com/v1/public/characters?nameStartsWith=spider&ts=TIME_STAMP_HERE&apikey=API_KEY_HERE&hash=HASH_HERE
 
-This route will respond with a valid HTML document with the results returned from the API. The title of the document should be "Marvel Characters Found". You should have the title set as the <title> element of the HTML document and as an h1 in your document. In an h2 element, you will print the supplied searchCharacterByName.
+This route will respond with a valid HTML document with the results returned from the API. The title of the document should be "Marvel Characters Found". You should have the title set as the ```<title>``` element of the HTML document and as an h1 in your document. In an ```h2``` element, you will print the supplied ```searchCharacterByName```.
 
-Your page should reference a CSS file, /public/site.css; this file should have at least 10 rulesets you must use at least 5 of them on this page. 
+Your page should reference a CSS file, ```/public/site.css```; this file should have at least 10 rulesets you must use at least 5 of them on this page. 
 
-You should have a main element, and inside of the main element have a ol tag that has a list of up to 15 characters matching the searchCharacterByName found in the request body in the following format (after searching spider). DO NOT SHOW MORE THAN 15 Characters. (HINT: READ THE API DOCUMENTATION!) 
+You should have a ```main``` element, and inside of the ```main``` element have a ```ol``` tag that has a list of up to 15 characters matching the ```searchCharacterByName``` found in the request body in the following format (after searching spider). DO NOT SHOW MORE THAN 15 Characters. (HINT: READ THE API DOCUMENTATION!) 
 
+```HTML
 <ol>
     <li>
         <a href="/marvelcharacter/1010727">Spider-dok</a>
@@ -64,22 +68,25 @@ You should have a main element, and inside of the main element have a ol tag tha
         <a href="/marvelcharacter/1009609">Spider-Girl (May Parker)</a>
     </li>
 </ol>
-You must also provide an a tag that links back to your / route with the text "Search for Another Character".
+```
+You must also provide an ```a``` tag that links back to your ```/``` route with the text ```Search for Another Character```.
 
 If no matches are found, you will print the following HTML paragraph:
 
+```HTML
 <p class="not-found">We're sorry, but no results were found for {searchCharacterByName}.</p>
-If the user does not input text into their form or enters just spaces into the input field, make sure to give a response status code of 400 on the page, and render an HTML page with a paragraph class called error; this paragraph should describe the error.
+```
+If the user does not input text into their form or enters just spaces into the input field, make sure to give a response status code of 400 on the page, and render an HTML page with a paragraph class called ```error```; this paragraph should describe the error.
 
-GET http://localhost:3000/marvelcharacter/{id}
-This route will query the Marvel API using the the id parameter in the URL (for example:  https://gateway.marvel.com/v1/public/characters/1009609?ts=TS_HERE&apikey=API_KEY_HERE&hash=HASH_HERE) and will  respond with a valid HTML document with some of the character details. The title of the document should be the name of the character. You should have the title set as the <title> element of the HTML document.  
+## GET http://localhost:3000/marvelcharacter/{id}
+This route will query the Marvel API using the the ```id``` parameter in the URL (for example:  https://gateway.marvel.com/v1/public/characters/1009609?ts=TS_HERE&apikey=API_KEY_HERE&hash=HASH_HERE) and will  respond with a valid HTML document with some of the character details. The title of the document should be the name of the character. You should have the title set as the ```<title>``` element of the HTML document.  
 
-Your page should reference a CSS file, /public/site.css; his file should have at least 10 rulesets you must use at least 5 of them on this page. 
+Your page should reference a CSS file, ```/public/site.css```; his file should have at least 10 rulesets you must use at least 5 of them on this page. 
 
-You should have a main element, and inside of the main element, you will have an article tag that has an h1 with the character name,  an img which the src is set to the value read from thumbnail.path in the data which is a URL to an image for the character.  NOTE: The path in the data is NOT the full image path. You will need to concatenate "/portrait_uncanny.jpg" to the end of the image path in the data (see HTML example below). Please see the documentation on imagesLinks to an external site..  You will have a p element that contains the character  description, a h2 that's content says "Comics"  and a ul  for the list of comics. You only need to display the comic name  as the list items: li
+You should have a ```main``` element, and inside of the ```main``` element, you will have an ```article``` tag that has an ```h1``` with the character ```name```, an ```img``` which the ```src``` is set to the value read from ```thumbnail.path``` in the data which is a URL to an image for the character.  NOTE: The path in the data is NOT the full image path. You will need to concatenate "/portrait_uncanny.jpg" to the end of the image path in the data (see HTML example below). Please see the [documentation on images](https://developer.marvel.com/documentation/images).  You will have a ```p``` element that contains the character  ```description```, a ```h2``` that's content says "Comics"  and a ```ul```  for the list of ```comics```. You only need to display the comic name  as the list items: ```li```
 
 Matching Character Data Returned from API (We will not be using all the fields, just the ones noted above):
-
+```Javascript
 {  
   "code": 200,
   "status": "Ok",
@@ -484,8 +491,11 @@ Links to an external site."
     ]
   }
 }
-HTML Format Printed for the character.  This will go into your main element:
+```
 
+HTML Format Printed for the character.  This will go into your ```main``` element:
+
+```HTML
 <article> 
   <h1>Spider-Girl (May Parker)</h1> 
   <img alt="Spider-Girl (May Parker)" src="http://i.annihil.us/u/prod/marvel/i/mg/1/70/4c003adccbe4f/portrait_uncanny.jpg
@@ -514,39 +524,43 @@ Links to an external site."/>
     <li>Amazing Spider-Girl (2006) #18</li>
     <li>Amazing Spider-Girl (2006) #19</li>
   </ul>
-</article> 
-You must also provide an a tag that links back to your / route with the text "Search for Another Character".
+</article>
+```
+You must also provide an ```a``` tag that links back to your ```/``` route with the text ```Search for Another Character```.
 
-If there is no character found for the given ID, make sure to give a response status code of 404 on the page, and render an HTML page with a paragraph class called error; this paragraph should describe the error. This route MUST work for every valid character ID in the API, NOT in just the list of characters as that url only returns the first page of characters! 
+If there is no character found for the given ID, make sure to give a response status code of 404 on the page, and render an HTML page with a paragraph class called ```error```; this paragraph should describe the error. This route MUST work for every valid character ID in the API, NOT in just the list of characters as that url only returns the first page of characters! 
 
-http://localhost:3000/public/site.css
+## http://localhost:3000/public/site.css
 This file should have 10 total rulesets that apply to your various pages. Each page must use at least 5 rulesets of the 10.  You can include more than 10 if you so desire. 
 
-References and Packages
-Basic CSS info can easily be referenced in the MDN CSS tutorial (Links to an external site.).
+# References and Packages
+Basic CSS info can easily be referenced in the [MDN CSS tutorial](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started).
 
-Hints
+# Hints
 You can use variables in your handlebars layout, that you pass to res.render. For example, in your layout you could have:
-
+```HTML
 <meta name="keywords" content="{{keywords}}" />
+```
 And in your route:
-
+```Javascript
 res.render("someView", {keywords: "dogs coffee keto"});
+```
 Which will render as:
-
+```HTML
 <meta name="keywords" content="dogs coffee keto" />
+```
 Or, perhaps, the title tag.
 
-Requirements
-You must not submit your node_modules folder
-You must remember to save your dependencies to your package.json folder
-You must do basic error checking in each function
-Check for arguments existing and of proper type.
-Throw if anything is out of bounds (ie, trying to perform an incalculable math operation or accessing data that does not exist)
-You MUST use async/await for all asynchronous operations.
-You must remember to update your package.json file to set app.js as your starting script!
-Your HTML must be valid or you will lose points on the assignment.
-Your HTML must make semantical sense; usage of tags for the purpose of simply changing the style of elements (such as i, b, font, center, etc) will result in points being deducted; think in terms of content first, then style with your CSS.
-You can be as creative as you'd like to fulfill front-end requirements; if an implementation is not explicitly stated, however you go about it is fine (provided the HTML is valid and semantical). Design is not a factor in this course.
-All inputs must be properly labeled!
-All previous requirements about the package.json author, start task, dependenices, etc. still apply
+# Requirements
+1. You must not submit your node_modules folder
+2. You must remember to save your dependencies to your package.json folder
+3. You must do basic error checking in each function
+4. Check for arguments existing and of proper type.
+5. Throw if anything is out of bounds (ie, trying to perform an incalculable math operation or accessing data that does not exist)
+6. You MUST use ```async/await``` for all asynchronous operations.
+7. You must remember to update your package.json file to set ```app.js``` as your starting script!
+8. [Your HTML must be valid](https://validator.w3.org/#validate_by_input) or you will lose points on the assignment.
+9. Your HTML must make semantical sense; usage of tags for the purpose of simply changing the style of elements (such as ```i, b, font, center```, etc) will result in points being deducted; think in terms of content first, then style with your CSS.
+10. You can be as creative as you'd like to fulfill front-end requirements; if an implementation is not explicitly stated, however you go about it is fine (provided the HTML is valid and semantical). Design is not a factor in this course.
+11. All inputs must be properly labeled!
+12. All previous requirements about the ```package.json``` author, start task, dependenices, etc. still apply
