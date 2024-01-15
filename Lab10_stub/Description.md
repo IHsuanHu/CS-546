@@ -186,26 +186,26 @@ If a user is not logged in, you will redirect to the GET /login route.
 If a user is logged in, but they are not an admin user, you will redirect to /error and render a HTML error page saying that the user does not have permission to view the page, and the page must issue an HTTP status code of 403.
 If the user is logged in AND the user has a role of admin, the middleware will "fall through" to the next route calling the next() callback.
 ONLY USERS WITH A ROLE of admin SHOULD BE ABLE TO ACCESS THE /admin ROUTE!
-6. This middleware will only be used for the GET /logout route and will do one of the following:
+6. This middleware will only be used for the GET ```/logout``` route and will do one of the following:
 
-1. If a user is not logged in, you will redirect to the GET /login route.
+  - If a user is not logged in, you will redirect to the GET /login route.
 
-2. if the user is logged in, the middleware will "fall through" to the next route calling the next() callback.
+  - if the user is logged in, the middleware will "fall through" to the next route calling the ```next()``` callback.
 
-See this referenceLinks to an external site. in the express documentation to read more about middleware.
+See this [reference](https://expressjs.com/en/guide/writing-middleware.html) in the express documentation to read more about middleware.
 
 # Styling
-You will create a CSS stylesheet in /public/css/styles.css; this file should have at least 5 rulesets.  You will need to utilize all 5 rulesets on each of the pages (not every page has to use all 5 rulesets each but all 5 rulesets must be utilized by the various pages in your application).  So you can have some rulesets for one page, some for another page but there needs to be at least 5 total rulesets that are used between all the pages. 
+You will create a CSS stylesheet in ```/public/css/styles.css```; this file should have at least 5 rulesets.  You will need to utilize all 5 rulesets on each of the pages (not every page has to use all 5 rulesets each but all 5 rulesets must be utilized by the various pages in your application).  So you can have some rulesets for one page, some for another page but there needs to be at least 5 total rulesets that are used between all the pages. 
 
 
 # Client-Side Validation For All Forms!
 
-You will create a client-side Javascript file in /public/js/client_side_validation.js.
+You will create a client-side Javascript file in ``` /public/js/client_side_validation.js ```.
 
 In this file, you must perform all client-side validation for every single form input (and the role dropdown) on your pages. The constraints for those fields are the same as they are for the data functions and routes. Using client-side JS, you will intercept the form's submit event when the form is submitted and If there is an error in the user's input or they are missing fields, you will not allow the form to submit to the server and will display an error on the page to the user informing them of what was incorrect or missing.  You must do this for ALL fields for the register form as well as the login form. If the form being submitted has all valid data, then you will allow it to submit to the server for processing. Don't forget to check that password and confirm password match on the registration form!
 
 # Using ```express-session```
-This middleware package does one (fairly simple) thing. It creates a cookie for the browser that will be used to track the current session of the user, after we verify their login. We will expand on the req.session field to store information about the currently logged in user. You can see an example using req.session [here](https://github.com/expressjs/session#reqsession).
+This middleware package does one (fairly simple) thing. It creates a cookie for the browser that will be used to track the current session of the user, after we verify their login. We will expand on the ```req.session``` field to store information about the currently logged in user. You can see an example using ```req.session``` [here](https://github.com/expressjs/session#reqsession).
 
 To initialize the middleware, you must do the following:
 ```javascript
