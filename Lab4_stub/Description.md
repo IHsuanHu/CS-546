@@ -12,9 +12,9 @@ You will:
 
 # Packages you will use:
 
-You will use the [mongodb](https://mongodb.github.io/node-mongodb-native/) package to hook into MongoDB
-You may use the [lecture 4 code](https://github.com/stevens-cs546-cs554/CS-546/tree/master/lecture_04) as a guide.
-You must save all dependencies you use to your package.json file
+- You will use the [mongodb](https://mongodb.github.io/node-mongodb-native/) package to hook into MongoDB
+- You may use the [lecture 4 code](https://github.com/stevens-cs546-cs554/CS-546/tree/master/lecture_04) as a guide.
+- You must save all dependencies you use to your package.json file
 
 How to handle bad data
 
@@ -106,29 +106,29 @@ Remember, you must export methods named precisely as specified. The async keywor
 
 ## async create(eventName, eventDescription, eventLocation, contactEmail, maxCapacity, priceOfAdmission, eventDate, startTime, endTime, publicEvent);
 This async function will return to the newly created event object, with all of the properties listed above.
-If ```eventName```, ```eventDescription```, ```eventLocation```, ```contactEmail```, ```maxCapacity```, ```priceOfAdmission```, ```eventDate```, ```startTime```, ```endTime```, ```publicEvent``` are not provided at all, the method should throw. (All fields need to have valid values);
-If ```eventName```, ```eventDescription```, ```contactEmail```, ```eventDate```, ```startTime```, ```endTime``` are not ```strings``` or are empty strings, the method should throw. (strings with only spaces are not valid)
-If ```eventName``` is less than 5 characters, the method should throw.
-If ```eventDescription``` is less than 25 characters, the method should throw.
-If ```contactEmail``` is not in a valid email address format, the method should throw (please research email address rules).
-If ```eventDate``` is not a valid date in "MM/DD/YYYY" format. If it's not in the expected format or is not a valid date, the method should throw (09/31/2024 is not valid since there are not 31 days in Sept). 
-The ```eventDate``` must be greater than the current date (so only future events can be created).
-The ```startTime``` must be a valid time in 12-hour AM/PM format "11:30PM":  If it's not in the expected format or not a valid time, the method should throw. 
-The ```startTime``` cannot be later than the ```endTime```, if it is, the method should throw.
-The ```endTime``` must be a valid time in 12-hour AM/PM format "11:30PM":  If it's not in the expected format or not a valid time, the method should throw. 
-The ```endTime``` cannot be earlier than the ```startTime```, if it is, the method should throw.
-The ```endTim```e should be at least 30 minutes later than the ```startTime```, if it's not, the method should throw. 
-If ```publicEvent``` is not a int he expected type (boolean), the method should throw.
-if ```maxCapacity```, priceOfAdmission are not the expected type (numbers), the method should throw.
-```maxCapacity``` should be a positive whole number > 0, if it's not, the method should throw.
-```priceOfAdmission``` should be a positive whole number, positive 2 decimal place float or  0, if it's not, the method should throw. (a price of 0 would mean it's a free event, price can be a whole number ```25``` or a two decimal place float ```25.50```
-If ```eventLocation``` is not an object,  the method should throw. 
-If ```eventLocation.streetAddress```, ```eventLocation.city```,  ```eventLocation.state```,  ```eventLocation.zip```  are not supplied, the method should throw.
-If ```eventLocation.streetAddress```, ```eventLocation.city```, ```eventLocation.state```, ```eventLocation.zip```  are not all valid strings, the method should throw.
-If ```eventLocation.streetAddress```, is less than 3 characters, the method should throw.
-If ```eventLocation.city```, is less than 3 characters, the method should throw. 
-```eventLocation.state```, Must be a valid two character state abbreviation "NY", "NJ" etc..
-If ```eventLocation.zip```, is not a string that contains 5 numbers, the method should throw. (only 5 digit zip but represented as a string, because leading 0's are valid in zip codes, yet JS drops leading 0's)
+- If ```eventName```, ```eventDescription```, ```eventLocation```, ```contactEmail```, ```maxCapacity```, ```priceOfAdmission```, ```eventDate```, ```startTime```, ```endTime```, ```publicEvent``` are not provided at all, the method should throw. (All fields need to have valid values);
+- If ```eventName```, ```eventDescription```, ```contactEmail```, ```eventDate```, ```startTime```, ```endTime``` are not ```strings``` or are empty strings, the method should throw. (strings with only spaces are not valid)
+- If ```eventName``` is less than 5 characters, the method should throw.
+- If ```eventDescription``` is less than 25 characters, the method should throw.
+- If ```contactEmail``` is not in a valid email address format, the method should throw (please research email address rules).
+- If ```eventDate``` is not a valid date in "MM/DD/YYYY" format. If it's not in the expected format or is not a valid date, the method should throw (09/31/2024 is not valid since there are not 31 days in Sept).
+- The ```eventDate``` must be greater than the current date (so only future events can be created).
+- The ```startTime``` must be a valid time in 12-hour AM/PM format "11:30PM":  If it's not in the expected format or not a valid time, the method should throw.
+- The ```startTime``` cannot be later than the ```endTime```, if it is, the method should throw.
+- The ```endTime``` must be a valid time in 12-hour AM/PM format "11:30PM":  If it's not in the expected format or not a valid time, the method should throw.
+- The ```endTime``` cannot be earlier than the ```startTime```, if it is, the method should throw.
+- The ```endTim```e should be at least 30 minutes later than the ```startTime```, if it's not, the method should throw.
+- If ```publicEvent``` is not a int he expected type (boolean), the method should throw.
+- if ```maxCapacity```, priceOfAdmission are not the expected type (numbers), the method should throw.
+- ```maxCapacity``` should be a positive whole number > 0, if it's not, the method should throw.
+- ```priceOfAdmission``` should be a positive whole number, positive 2 decimal place float or  0, if it's not, the method should throw. (a price of 0 would mean it's a free event, price can be a whole number ```25``` or a two decimal place float ```25.50```
+- If ```eventLocation``` is not an object,  the method should throw.
+- If ```eventLocation.streetAddress```, ```eventLocation.city```,  ```eventLocation.state```,  ```eventLocation.zip```  are not supplied, the method should throw.
+- If ```eventLocation.streetAddress```, ```eventLocation.city```, ```eventLocation.state```, ```eventLocation.zip```  are not all valid strings, the method should throw.
+- If ```eventLocation.streetAddress```, is less than 3 characters, the method should throw.
+- If ```eventLocation.city```, is less than 3 characters, the method should throw.
+- ```eventLocation.state```, Must be a valid two character state abbreviation "NY", "NJ" etc..
+- If ```eventLocation.zip```, is not a string that contains 5 numbers, the method should throw. (only 5 digit zip but represented as a string, because leading 0's are valid in zip codes, yet JS drops leading 0's)
 
 Note:  FOR ALL STRING INPUTS: Strings with empty spaces are NOT valid strings.  So no cases of "    " are valid.  You MUST trim all inputs that are strings
 
@@ -222,10 +222,10 @@ Notice the output does not have ObjectId() around the ID field and no quotes aro
 ## async get(id);
 When given an id, this function will return an event from the database.  
 
-If no ```id``` is provided, the method should throw.
-If the ```id``` provided is not a ```string```, or is an  empty string, the method should throw.
-If the ```id```  provided is not a valid ```ObjectId```, the method should throw
-If no events exists with that ```id```, the method should throw.
+- If no ```id``` is provided, the method should throw.
+- If the ```id``` provided is not a ```string```, or is an  empty string, the method should throw.
+- If the ```id```  provided is not a valid ```ObjectId```, the method should throw
+- If no events exists with that ```id```, the method should throw.
 
 For example, you would use this method as:
 
@@ -315,11 +315,11 @@ try {
 ## async remove(id)
 This function will remove the event from the database.
 
-If no ```id``` is provided, the method should throw.
-If the ```id``` provided is not a ```string```, or is an empty string the method should throw.
-If the ```id``` provided is not a valid ```ObjectId```, the method should throw
-If the event cannot be removed (does not exist), the method should throw.
-If the removal succeeds, you will return an ```object``` in the following format:  ```{eventName: string_of event_name_value, deleted: true} //make sure deleted is a boolean and NOT a string!```
+- If no ```id``` is provided, the method should throw.
+- If the ```id``` provided is not a ```string```, or is an empty string the method should throw.
+- If the ```id``` provided is not a valid ```ObjectId```, the method should throw
+- If the event cannot be removed (does not exist), the method should throw.
+- If the removal succeeds, you will return an ```object``` in the following format:  ```{eventName: string_of event_name_value, deleted: true} //make sure deleted is a boolean and NOT a string!```
 
 ```Javascript
 import * as events from "./events.js";
@@ -336,15 +336,15 @@ Important note:  The ID field that MongoDB generates is an ```ObjectId```.  This
 ## async rename(id, newEventName)
 This function will update the eventName field of the event currently in the database.
 
-If no ```id``` is provided, the method should throw.
-If the ```id``` provided is not a string, or is an empty ```string``` the method should throw.
-If the ```id``` provided is not a valid ```ObjectId```, the method should throw.
-If ```newEventName``` is not provided, the method should throw.
-If ```newEventName``` is not a ```string```, or an empty string, the method should throw.
-If ```newEventName``` is less than 5 characters, the method should throw.
-If the event cannot be updated (does not exist), the method should throw.
-If the ```newEventName``` is the same as the current value stored in the database, the method should throw. 
-If the update succeeds, return the entire event object as it is after it is updated.
+- If no ```id``` is provided, the method should throw.
+- If the ```id``` provided is not a string, or is an empty ```string``` the method should throw.
+- If the ```id``` provided is not a valid ```ObjectId```, the method should throw.
+- If ```newEventName``` is not provided, the method should throw.
+- If ```newEventName``` is not a ```string```, or an empty string, the method should throw.
+- If ```newEventName``` is less than 5 characters, the method should throw.
+- If the event cannot be updated (does not exist), the method should throw.
+- If the ```newEventName``` is the same as the current value stored in the database, the method should throw.
+- If the update succeeds, return the entire event object as it is after it is updated.
 
 Note:  FOR ALL STRING INPUTS: Strings with empty spaces are NOT valid strings.  So no cases of "    " are valid.  You MUST trim all inputs that are strings (including ID)
 
