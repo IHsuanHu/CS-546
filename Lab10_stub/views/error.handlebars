@@ -1,0 +1,15 @@
+{{!--
+
+You can use this if they try to access a route that they should not be able to. You will redirect them here. For
+example, if they go to /protected without being logged in, or they try to access /admin without beinging logged in or
+they are not an admin user.
+
+--}}
+
+<h2>{{error}}</h2>
+<div class="error-message">
+    <h3>Something </h3><h5>goes wrong</h5>
+</div>
+<footer>
+    <a href="/login"><h4>Login</h4></a>
+</footer>

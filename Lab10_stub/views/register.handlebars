@@ -1,0 +1,36 @@
+{{!--
+
+registration handelbars
+
+--}}
+
+
+<h2>{{error}}</h2>
+<form method="POST" id="register">
+    <label for="firstNameInput">First name:</label>
+    <input type="text" id="firstNameInput" name="firstNameInput">
+
+    <label for="lastNameInput">Last name:</label>
+    <input type="text" id="lastNameInput" name="lastNameInput">
+
+    <label for="emailAddressInput">Email:</label>
+    <input type="email" id="emailAddressInput" name="emailAddressInput">
+
+    <label for="passwordInput">Password:</label>
+    <input type="password" id="passwordInput" name="passwordInput">
+
+    <label for="confirmPasswordInput">Confirm password:</label>
+    <input type="password" id="confirmPasswordInput" name="confirmPasswordInput">
+
+    <label for="roleInput">Role:</label>
+    <select id="roleInput" name="roleInput">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+    </select>
+    <button type="submit" onClick="registerInput()">button</button>
+</form>
+<div id="error" class="error" hidden><h4>Input error</h4></div>
+    <footer>
+    <a href="/login"><h5>Login</h5></a>
+</footer>
+<script src='/public/js/client_side_validation.js'></script>

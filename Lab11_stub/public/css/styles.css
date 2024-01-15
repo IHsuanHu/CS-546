@@ -1,0 +1,84 @@
+/*
+You must include 10 CSS rules that aply to your application
+*/
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-size: 14pt;
+}
+
+body {
+	background: honeydew;
+	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+main {
+	max-width: 75%;
+	margin: auto;
+}
+
+header {
+	border-bottom: 1.5rem solid oldlace;
+}
+footer {
+    border-bottom: 1rem solid royalblue;
+}
+
+h1 {
+	color: peru;
+	font-size: 2rem;
+}
+
+h2 {
+	color: slateblue;
+	font-size: 1.25rem;
+}
+
+h3 {
+	color: darkcyan;
+	font-size: 0.7rem;
+}
+
+
+li {
+	font-size: 1rem;
+	color: sandybrown;
+}
+
+.detail dd {
+    border-top: 0.5rem solid honeydew;
+    border-bottom: 0.5rem solid honeydew;
+    line-height: 1;
+    font-size: 1rem;
+    color: skyblue;
+}
+.detail dt {
+    border-top: 0.5rem solid honeydew;
+    border-bottom: 1rem solid honeydew;
+    font-size: 1.2rem;
+    color: slateblue;
+}
+
+h4 {
+	font-size: 0.8rem;
+	line-height: 1;
+    color: plum;
+}
+input {
+	border: none;
+	color: dodgerblue;
+	padding: 5px 5px;
+	cursor: pointer;
+  }
+button {
+    color: peru;
+    padding: 2px 5px;
+}
+
+label {
+    color: goldenrod;
+	font-weight: bold;
+}

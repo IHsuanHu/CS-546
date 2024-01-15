@@ -1,0 +1,134 @@
+/*This file should have 10 CSS rulesets */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-size: 14pt;
+}
+
+body {
+	background: #dedede;
+	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+main {
+	max-width: 75%;
+	margin: auto;
+}
+
+header {
+	border-bottom: 1px solid #afafaf;
+}
+
+
+h6 {
+	color: #222;
+	margin-bottom: 5px;
+}
+
+h1 {
+	color: peru;
+	font-size: 2rem;
+}
+
+h2 {
+	color: slateblue;
+	font-size: 1.25rem;
+}
+
+h3 {
+	color: darkcyan;
+	font-size: 1.15rem;
+}
+
+h4 {
+	color: black;
+	font-size: 0.9rem;
+}
+
+h5 {
+	color: brown;
+	font-size: 1.05rem;
+}
+
+h6 {
+	font-size: 1rem;
+}
+ol {
+	color: greenyellow;
+	font-size: 0.9rem
+}
+li {
+	font-size: 1.15rem;
+	color: palevioletred;
+}
+
+p {
+	font-size: 0.8rem;
+	line-height: 2;
+}
+input {
+	border: none;
+	color: blueviolet;
+	padding: 16px 32px;
+	cursor: pointer;
+  }
+
+.post {
+	width: 75%;
+	border-bottom: 1px dashed #333;
+}
+
+.new-post-form {
+	max-width: 300px;
+}
+
+.new-post-form .full-width-input {
+	display: block;
+	min-height: 3em;
+	margin: 10px 0;
+	width: 100%;
+}
+
+label {
+	font-weight: bold;
+}
+
+.error-list li {
+	color: #ff0000;
+}
+
+.author-link,
+.author-link:link {
+	color: #228b22;
+}
+
+.author-link:visited {
+	font-style: italic;
+	color: saddlebrown;
+}
+
+.author-link:hover {
+	font-style: normal;
+	font-weight: 700;
+}
+
+.author-link:active {
+	color: #ff0000;
+}
+
+.error-message h2, h4, h3 {
+  display: inline;
+  color: slateblue;
+  margin: 0;
+}
+.home-message p, h4{
+	display: inline;
+	margin: 0;
+}
+.result h3, h4, h2{
+	display: inline;
+	margin: 0;
+}
