@@ -1,12 +1,5 @@
-AJAX
+# AJAX
 For this lab, you will be using HTML, JQuery and Client-side JavaScript on the user's browser to make a simple application that makes AJAX requests for the data needed and then inject the elements and data onto the page. 
-
- 
-
-YOU MUST use the directory and file structure in the code stub or points will be deducted. You can download the starter template here: Lab11_stub.zipDownload Lab11_stub.zip
-
-PLEASE NOTE: THE STUB DOES NOT INCLUDE THE PACKAGE.JSON FILE. YOU WILL NEED TO CREATE IT! DO NOT ADD ANY OTHER FILE OR FOLDER APART FROM PACKAGE.JSON FILE.
-
  
 
 # TV Maze API
