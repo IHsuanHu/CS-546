@@ -24,7 +24,8 @@ async function getAuthors(){
   return data // this will be the array of author objects
 }
 ```
-Instead of making the request in every single function, remember that code reuse is key. So if you see that you are making the same axios request in all of your functions, it's best to put it in a function like noted above and then call that function in all of the functions that need to get the data from whichever json file you're working with.  Always do this when you see you are doing the same thing over and over again in multiple different places.  It's much easier to maintain.  Say if the URL of the file ever changes, then you only need to change it in one place, not 10 different places. 
+Instead of making the request in every single function, remember that code reuse is key. So if you see that you are making the same axios request in all of your functions, it's best to put it in a function like noted above and then call that function in all of the functions that need to get the data from whichever json file you're working with.  
+Always do this when you see you are doing the same thing over and over again in multiple different places.  It's much easier to maintain.  Say if the URL of the file ever changes, then you only need to change it in one place, not 10 different places. 
 
 # authors.js
 This file will export the following five functions:
@@ -105,7 +106,8 @@ This function will return an ```object``` with the youngest and oldest authors b
 { youngest: "author_first_name author_last_name", oldest: "author_first_name author_last_name"} 
 ```
 
-You must not only take the year into account but the month and day!  For example, someone born on September 25th 1975 is older than someone born on December 1st 1975. If there happens to be a tie for either oldest or youngest, you will return an array with the names sorted by last name.  So say for example Patrick Hill and Eduardo Bonelli were tied for being the oldest, both born on the same day in the same year and Jackey Yang was the youngest.  The function would return:
+You must not only take the year into account but the month and day!  For example, someone born on September 25th 1975 is older than someone born on December 1st 1975. If there happens to be a tie for either oldest or youngest, you will return an array with the names sorted by last name.  So say for example Patrick Hill and Eduardo Bonelli were tied for being the oldest, both born on the same day in the same year and Jackey Yang was the youngest.  
+The function would return:
 
 ```Json
 { youngest: "Jackey Yang", oldest: ["Eduardo Bonelli", "Patrick Hill"]} 
@@ -146,7 +148,7 @@ You must check:
 
 - That the ```id``` parameter exists and is of proper type (string).  If not, throw an error.
 - If the id exists and is in the proper type but the ```id``` is not found in the array of books, throw a 'book not found' error.
-- if the ```id``` parameter is just empty spaces, throw an error.
+- If the ```id``` parameter is just empty spaces, throw an error.
 
 ```Javascript
 await getBookById("99875ad8-a1d3-42ea-8d7b-5ac4cd4edb9e"); 
