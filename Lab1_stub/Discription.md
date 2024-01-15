@@ -49,7 +49,7 @@ console.log(lab1.questionThree([[3,3,3], [3,3,4], [5,4,2]])); // returns and the
 // make 5 calls to questionFour
 console.log(lab1.questionFour('patrick,hill,trees,home'));  // Returns and then outputs: ['rickpat', 'llhi', 'eestr', 'meho'] 
 ```
-#Functions to implement
+# Functions to implement
 ## questionOne(arr)
 For your first function, you will calculate the amount of vowels (A, E, I, O, U, not Y) in each string in the supplied array and return the sum of all the amounts. Additionally, a boolean should be returned indicating whether the total sum was even. To return both outputs, use an array. The order of elements matters. See the following examples: 
 ```javascript
