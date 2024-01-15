@@ -44,7 +44,7 @@ Endpoint to be used: http://api.tvmaze.com/search/shows?q=search_term_here
 
 NOTE: Not all shows have ALL data displayed on the showDetails element, which will cause your application to not work correctly when a show link is clicked if it doesn't have all the needed data needed for the show element.  You will be required to check each field needed for the show element.  If there is no value for a field, you will show "N/A" instead of that field's value on the show detail element.  For the image, if there is no image, you can load a generic "no image" image that is served from your public directory.  You can save this one (right click and save the image):
 
-no_image.jpeg
+![no_image](https://github.com/IHsuanHu/CS-546/blob/main/Lab11_stub/public/no_image.jpeg)
 
  
 
