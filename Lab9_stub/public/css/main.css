@@ -1,0 +1,96 @@
+/*
+You will style your page using at least 10 CSS selectors for general CSS styling. You will place the CSS in its own file. 
+*/
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-size: 14pt;
+}
+
+body {
+	background: #dedede;
+	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+main {
+	max-width: 75%;
+	margin: auto;
+}
+
+header {
+	border-bottom: 1px solid #afafaf;
+}
+
+
+h6 {
+	color: #222;
+	margin-bottom: 5px;
+}
+
+h1 {
+	color: peru;
+	font-size: 2rem;
+}
+
+h2 {
+	color: slateblue;
+	font-size: 1.25rem;
+}
+
+h3 {
+	color: darkcyan;
+	font-size: 1.15rem;
+}
+
+h4 {
+	color: black;
+	font-size: 0.9rem;
+}
+
+h5 {
+	color: brown;
+	font-size: 1.05rem;
+}
+
+h6 {
+	font-size: 1rem;
+}
+ol {
+	font-size: 0.9rem
+}
+li {
+	font-size: 1.15rem;
+	color: palevioletred;
+}
+
+p {
+	font-size: 0.8rem;
+	line-height: 2;
+}
+input {
+	border: none;
+	color: blueviolet;
+	padding: 16px 32px;
+	cursor: pointer;
+  }
+
+.post {
+	width: 75%;
+	border-bottom: 1px dashed #333;
+}
+
+
+label {
+	font-weight: bold;
+}
+
+
+.prime {
+	color: #00ff00;
+}
+.not-prime{
+	color: #ff0000;
+}
