@@ -52,7 +52,7 @@ For example:  The show "Hemlock Grove" is missing the network, "Anna und die Hau
 
  
 
-(https://sit.instructure.com/users/17837/files/7181636/preview?verifier=Lke6mcg4ZMHTKpfuG7L6mI7aTLJtrVkeX7KHan50)
+![](https://sit.instructure.com/users/17837/files/7181636/preview?verifier=Lke6mcg4ZMHTKpfuG7L6mI7aTLJtrVkeX7KHan50)
 
 Screen Shot 2020-11-19 at 12.27.46 PM.png
 
